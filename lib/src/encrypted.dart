@@ -1,4 +1,4 @@
-part of encrypt;
+part of '../encrypt.dart';
 
 /// Represents an encripted value.
 class Encrypted {

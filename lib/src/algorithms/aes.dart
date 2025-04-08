@@ -1,4 +1,4 @@
-part of encrypt;
+part of '../../encrypt.dart';
 
 /// Wraps the AES Algorithm.
 class AES implements Algorithm {
@@ -28,11 +28,11 @@ class AES implements Algorithm {
     }
 
     if (_streamCipher != null) {
-      _streamCipher!
+      _streamCipher
         ..reset()
         ..init(true, _buildParams(iv, associatedData: associatedData));
 
-      return Encrypted(_streamCipher!.process(bytes));
+      return Encrypted(_streamCipher.process(bytes));
     }
 
     _cipher
@@ -53,11 +53,11 @@ class AES implements Algorithm {
     }
 
     if (_streamCipher != null) {
-      _streamCipher!
+      _streamCipher
         ..reset()
         ..init(false, _buildParams(iv, associatedData: associatedData));
 
-      return _streamCipher!.process(encrypted.bytes);
+      return _streamCipher.process(encrypted.bytes);
     }
 
     _cipher
